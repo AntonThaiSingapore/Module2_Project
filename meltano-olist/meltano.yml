@@ -1,0 +1,35 @@
+default_environment: dev
+project_id: 01a06cf7-26b5-72d4-8ef4-58d80265957a
+environments:
+- name: dev
+- name: staging
+- name: prod
+python: python3.11
+plugins:
+  extractors:
+  - name: tap-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-tap-postgres
+    config:
+      database: postgres
+      filter_schemas:
+      - public
+      host: aws-0-ap-southeast-2.pooler.supabase.com
+      port: 5432
+      user: postgres.fyjnwrzrheamegecvted
+    select:
+    - public-olist_orders_dataset.*
+    - public-olist_orders_dataset.*
+  loaders:
+  - name: target-bigquery
+    variant: z3z1ma
+    pip_url: git+https://github.com/z3z1ma/target-bigquery.git
+    config:
+      batch_size: 104857600
+      credentials_path: /home/anton/dsai/gcp_key/atomic-box-504614-c7-bd89dab05b9f.json
+      dataset: olist_eCommerce
+      denormalized: true
+      flattening_enabled: true
+      flattening_max_depth: 1
+      method: batch_job
+      project: atomic-box-504614-c7
