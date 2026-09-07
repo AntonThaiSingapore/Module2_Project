@@ -44,12 +44,12 @@ list all the table in Postgres:
 ```
 meltano select tap-postgres --list  --all
 ```
-```
-meltano select tap-postgres "public-olist_orders_dataset" "*"
-```
+
+To list and confrim the selection: 
 ```
 meltano select tap-postgres --list
 ```
+
 ```
 meltano add target-bigquery
 ```

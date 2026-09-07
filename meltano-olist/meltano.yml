@@ -19,7 +19,15 @@ plugins:
       user: postgres.fyjnwrzrheamegecvted
     select:
     - public-olist_orders_dataset.*
-    - public-olist_orders_dataset.*
+    - public-olist_order_items_dataset.*
+    - public-olist_order_payments_dataset.*
+    - public-olist_order_reviews_dataset.*
+    - public-olist_products_dataset.*
+    - public-olist_sellers_dataset.*
+    - public-olist_customers_dataset.*
+    - public-olist_geolocation_dataset.*
+    - public-olist_category_name_translation_dataset.*
+
   loaders:
   - name: target-bigquery
     variant: z3z1ma
