@@ -68,3 +68,28 @@ meltano run tap-postgres target-bigquery
 We also go further this time: after loading the raw data into BigQuery, we use dbt to transform it into cleaned, analytics-ready models. This completes the full ELT cycle:
 
 Postgres (Supabase)  ──►  BigQuery (raw)  ──►  dbt models (transformed)
+
+# Create Dbt project to transfrom the data in BigQuery
+
+```
+dbt init dbt_olist
+cd dbt_olist
+```
+Create new (separate profiles.yml) for olist project
+```
+dbt_olist:
+  outputs:
+    dev:
+      dataset: olist_eCommerce
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /home/anton/dsai/gcp_key/atomic-box-504614-c7-bd89dab05b9f.json # Use your path of key file
+      location: US
+      method: service-account
+      priority: interactive
+      project: atomic-box-504614-c7 # enter your google project id
+      threads: 1
+      type: bigquery
+  target: dev
+```
+
