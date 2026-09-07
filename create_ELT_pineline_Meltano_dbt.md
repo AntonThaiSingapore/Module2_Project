@@ -62,3 +62,5 @@ meltano config set target-bigquery --interactive
 ```
 meltano run tap-postgres target-bigquery
 ```
+
+# n this context, you don't have to do anything manually with the JSON. The target-bigquery loader takes the raw JSON (coming from the GitHub API for example) and automatically parses it, flattens the nested fields, unrolls the repeated lists, and structures it perfectly into rows and columns in BigQuery.
