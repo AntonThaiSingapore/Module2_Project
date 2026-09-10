@@ -1,10 +1,14 @@
 version: 2
 
-sources: # atomic-box-504614-c7.olist_eCommerce.public_olist_products_dataset
-  - name: olist_eCommerce
-    description: "The raw data from the Olist eCommerce dataset"
+sources: # atomic-box-504614-c7.olist_eCommerce_1.public_olist_products_dataset
+  - name: olist_eCommerce_1
+    description: "The raw data from the Olist eCommerce 1 dataset"
 
     database: atomic-box-504614-c7
     tables:
       - name: public_olist_products_dataset
-      - name: product_category_name_translation
+      - name: public_product_category_name_translation
+      - name: public_olist_geolocation_dataset
+      - name: public_olist_orders_dataset
+      - name: public_olist_customers_dataset
+  

@@ -1,10 +1,11 @@
 -- Create our clean Products table
--- CREATE OR REPLACE TABLE dim_products AS (
+
   {{ config(
     materialized='table',
     description="Dimensional table for the products"
+            
   ) }}
-  
+
   SELECT 
     -- 1. Keep the unique product ID
     p.product_id,
@@ -21,10 +22,10 @@
     p.product_width_cm
 
   -- We start with our raw product table (we call it "p" for short)
-  FROM {{ source('olist_eCommerce', 'public_olist_products_dataset') }} AS p
+  FROM {{ source('olist_eCommerce_1', 'public_olist_products_dataset') }} AS p
   
   -- We use a LEFT JOIN because we want to keep ALL products, 
   -- even if we don't find an English translation for some of them.
-  LEFT JOIN {{ source('olist_eCommerce', 'product_category_name_translation') }} AS t
+  LEFT JOIN {{ source('olist_eCommerce_1', 'public_product_category_name_translation') }} AS t
     ON p.product_category_name = t.product_category_name
 

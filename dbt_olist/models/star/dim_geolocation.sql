@@ -2,9 +2,8 @@
 
   {{ config(
     materialized='table',
-    description="Dimensional table for the geolocation data",
-    enabled=true -- Enable this model       
-  ) }}
+    description="Dimensional table for the geolocation data"
+    ) }}
 
 SELECT 
     -- 1. Unique 5-digit Zip Code Prefix (Primary Key)

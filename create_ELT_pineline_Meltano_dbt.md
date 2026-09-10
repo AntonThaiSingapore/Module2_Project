@@ -94,5 +94,9 @@ dbt_olist:
 ```
 
 # Using SQL inside BigQuery to create analytics tables
-1) Create the product dimension: dim_product
+Raw dataset: olist_eCommerce_1
+Analisys-ready dataset: olist_eCommerce 
 
+1) Create the product dimension: dim_product
+2) Create a clean geolocation dimention table
+3) Create a locatoin enriched fact table with payment value

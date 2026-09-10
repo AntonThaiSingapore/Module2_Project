@@ -26,7 +26,7 @@ plugins:
     - public-olist_sellers_dataset.*
     - public-olist_customers_dataset.*
     - public-olist_geolocation_dataset.*
-    - public-olist_category_name_translation_dataset.*
+    - public-product_category_name_translation.*
 
   loaders:
   - name: target-bigquery
@@ -35,7 +35,7 @@ plugins:
     config:
       batch_size: 104857600
       credentials_path: /home/anton/dsai/gcp_key/atomic-box-504614-c7-bd89dab05b9f.json
-      dataset: olist_eCommerce
+      dataset: olist_eCommerce_1
       denormalized: true
       flattening_enabled: true
       flattening_max_depth: 1

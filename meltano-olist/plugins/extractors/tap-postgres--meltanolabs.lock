@@ -27,6 +27,13 @@
   ],
   "settings": [
     {
+      "name": "auto_bootstrap_log_based",
+      "kind": "boolean",
+      "value": false,
+      "label": "Auto Bootstrap Log Based",
+      "description": "If True, LOG_BASED streams without a prior LSN bookmark are automatically bootstrapped via a FULL_TABLE sync before WAL streaming begins, with the current WAL flush LSN seeded as the stream's starting bookmark. If False (default), the WAL reader starts from the earliest entry (LSN=0). Only applies when log_based_single_connection=True."
+    },
+    {
       "name": "batch_config.encoding.compression",
       "kind": "options",
       "label": "Batch Compression Format",
@@ -141,6 +148,12 @@
       "description": "The maximum length of a flattened key."
     },
     {
+      "name": "flattening_separator",
+      "kind": "string",
+      "label": "Flattening Separator",
+      "description": "The separator to use when flattening keys."
+    },
+    {
       "name": "host",
       "kind": "string",
       "label": "Host",
@@ -152,6 +165,13 @@
       "value": false,
       "label": "Json As Object",
       "description": "Defaults to false, if true, json and jsonb fields will be Objects."
+    },
+    {
+      "name": "log_based_single_connection",
+      "kind": "boolean",
+      "value": false,
+      "label": "Log Based Single Connection",
+      "description": "Use a single replication connection to sync all LOG_BASED streams in one pass over the WAL. This avoids redundant WAL scans when multiple tables use LOG_BASED replication. Only applicable when replication_method is LOG_BASED."
     },
     {
       "name": "max_record_count",
