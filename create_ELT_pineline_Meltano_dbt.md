@@ -93,3 +93,6 @@ dbt_olist:
   target: dev
 ```
 
+# Using SQL inside BigQuery to create analytics tables
+1) Create the product dimension: dim_product
+
