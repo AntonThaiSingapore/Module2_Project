@@ -3,7 +3,6 @@ version: 2
 sources: # atomic-box-504614-c7.olist_eCommerce_1.public_olist_products_dataset
   - name: olist_eCommerce_1
     description: "The raw data from the Olist eCommerce 1 dataset"
-
     database: atomic-box-504614-c7
     tables:
       - name: public_olist_products_dataset
@@ -11,4 +10,13 @@ sources: # atomic-box-504614-c7.olist_eCommerce_1.public_olist_products_dataset
       - name: public_olist_geolocation_dataset
       - name: public_olist_orders_dataset
       - name: public_olist_customers_dataset
+      - name: public_olist_order_payments_dataset
+
+  - name: olist_eCommerce
+    description: "The dimensional table from the Olist eCommerce 1 dataset"
+    database: atomic-box-504614-c7
+    tables:
+      - name: dim_geolocation
+      - name: fact_sale_order_location
+
   

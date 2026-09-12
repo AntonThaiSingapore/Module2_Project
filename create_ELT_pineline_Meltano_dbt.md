@@ -98,5 +98,6 @@ Raw dataset: olist_eCommerce_1
 Analisys-ready dataset: olist_eCommerce 
 
 1) Create the product dimension: dim_product
-2) Create a clean geolocation dimention table
-3) Create a locatoin enriched fact table with payment value
+2) Create a clean geolocation dimention table based on zip code prefix
+3) Create a clean a location-enriched fact table with payment value from (order_payment and customer datasets)
+
