@@ -101,3 +101,5 @@ Analisys-ready dataset: olist_eCommerce
 2) Create a clean geolocation dimention table based on zip code prefix
 3) Create a clean a location-enriched fact table with payment value from (order_payment and customer datasets)
 
+4) Creat a dim table Revenue by catergory and location
+5) Creat a dim table Revenue by saleer and location
